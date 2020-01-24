@@ -2,11 +2,14 @@
 
 <input [(ngModel)]="id">
 <input [(ngModel)]="id" readonly>
+<button (click)="addPokemon(id)">Add Pokemon</button>
 <div>
    <h1> List de pokemon</h1>
+  <p>SEARCHING </p> <input [(ngModel)] = "searchValue">
   <select name = "list_poke" [(ngModel)] = "choice">
-    <option *ngFor= "let p of pokemons"> {{p.name}}</option>
-  </select><br>
+    <option *ngFor= "let p of pokemons| filterPokemonPipe: 'name': searchValue"> {{p.name}}</option>
+  </select> <button (click)="codeToExecute()">Go!</button>
+  <br>
 
-  hello {{ name }} with id: {{id}}
+  mot tapé:  {{ id }} <br> choice: {{choice}}
 </div>

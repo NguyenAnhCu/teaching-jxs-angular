@@ -1,4 +1,4 @@
-import { Stat } from './stat';
+import { Stat } from './Stat';
 
 describe('Stat', () => {
   it('should create an instance', () => {
